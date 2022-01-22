@@ -2,10 +2,11 @@
   "name": "roteiro",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "nodemon ./api/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc && nodemon .dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mockserver": "npx json-server --watch api/data/dados.json"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,12 @@
   },
   "homepage": "https://github.com/alura-cursos/1922-graphql#readme",
   "dependencies": {
+    "apollo-server": "^3.6.2",
     "json-server": "^0.16.1",
     "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "tslint": "^6.1.3",
+    "typescript": "^4.5.5"
   }
 }
