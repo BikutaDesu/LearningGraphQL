@@ -1,12 +1,15 @@
 import { gql } from "apollo-server";
 
 const userSchema = gql`
+  scalar DateTime
+
   type User {
     id: ID!
     name: String!
     active: Boolean!
     email: String
     role: Role!
+    createdAt: DateTime
   }
 
   type Role {
@@ -25,6 +28,7 @@ const userSchema = gql`
       email: String
       active: Boolean!
       role: String!
+      createdAt: DateTime
     ): User!
     updateUser(
       id: ID!
